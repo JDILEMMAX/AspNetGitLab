@@ -1,1 +1,22 @@
 .vscode/*
+/bin/
+/obj/
+
+# Using `obj/*` and `bin/*` in a `.gitignore` file ignores all files and
+# subfolders inside `obj` and `bin`. While the folders themselves are not
+# directly ignored, they effectively behave like the other patterns since
+# Git doesn’t track empty folders once their contents are ignored or removed.
+# In contrast, `obj/` or `/obj/` (similarly `bin/` or `/bin/`) ignores the
+# entire folder and all its contents from the repository root, ensuring
+# neither the folders nor their contents are tracked. The leading `/`
+# simply anchors the path to the repo root, but the effect is the same when
+# placed at the root.
+
+# Note: `.gitignore` only prevents untracked files from being added; it does
+# not automatically remove files or folders that are already tracked by Git.
+# If `obj/` and `bin/` were previously committed, Git will continue to track
+# them even after adding them to `.gitignore`. To stop tracking them while keeping
+# them locally, run:
+
+# git rm -r --cached obj bin
+# git commit -m "Stop tracking obj and bin folders"
